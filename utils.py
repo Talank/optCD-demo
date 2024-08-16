@@ -131,6 +131,9 @@ def modify_file_content(yaml_file_content: str) -> str:
     steps_regex = re.compile(steps_pattern)
 
     while current_line < len(initial_file):
+        if current_line == 0:
+            initial_file[current_line] = initial_file[current_line] + " modified"
+        
         line = initial_file[current_line]
         line_indent = get_indent(line)
 
