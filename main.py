@@ -23,6 +23,11 @@ def main():
     
     print(modified_file)
 
+    print("new list of files")
+    files_and_directories = os.listdir(current_directory)
+    for item in files_and_directories:
+        print(item)
+
 
 if __name__ == '__main__':
     main()
