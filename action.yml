@@ -38,7 +38,7 @@ runs:
         pwd
         mkdir -p .github/workflows
         cp modified.yml "${{ inputs.yaml-file }}"
-        gh workflow run "${{ inputs.yaml-file }}"
+        # gh workflow run "${{ inputs.yaml-file }}"
       shell: bash
       env:
         GITHUB_TOKEN: ${{ github.token }}
