@@ -13,6 +13,7 @@ def main():
     modified_file = utils.modify_file_content(yaml_file_content)
 
     current_directory = os.getcwd()
+    print("cwd is: "+str(current_directory))
     files_and_directories = os.listdir(current_directory)
     for item in files_and_directories:
         print(item)
