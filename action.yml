@@ -36,7 +36,8 @@ runs:
       run: |
         ls
         pwd
-        gh workflow run modified.yml
+        cp modified.yml .github/workflows/modified.yml
+        gh workflow run ./modified.yml
       shell: bash
       env:
         GITHUB_TOKEN: ${{ github.token }}
