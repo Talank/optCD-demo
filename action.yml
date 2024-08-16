@@ -27,7 +27,7 @@ runs:
         pip install -r "${{ github.action_path }}"/requirements.txt
       shell: bash
     - name: Modify YAML file and save output
-      run: python "${{ github.action_path }}"/main.py "${{ inputs.yaml-file }}" ".github/workflows/modified.yml"
+      run: python "${{ github.action_path }}"/main.py "${{ inputs.yaml-file }}" "modified.yml"
       shell: bash
       env:
         GITHUB_TOKEN: ${{ github.token }}
