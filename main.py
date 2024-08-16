@@ -1,6 +1,6 @@
 import sys
 import utils
-
+import os
 
 def main():
     if len(sys.argv) != 3:
@@ -11,6 +11,11 @@ def main():
     
     yaml_file_content = utils.get_file_content(yaml_file_path)
     modified_file = utils.modify_file_content(yaml_file_content)
+
+    current_directory = os.getcwd()
+    files_and_directories = os.listdir(current_directory)
+    for item in files_and_directories:
+        print(item)
 
     with open(output_file_path, 'w') as f:
         f.write(modified_file)
