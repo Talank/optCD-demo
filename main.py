@@ -3,7 +3,7 @@ import utils
 
 
 def main():
-    if len(sys.argv) != 2:
+    if len(sys.argv) != 3:
         print("Usage: python main.py <yaml-file>")
         sys.exit(1)
     yaml_file_path = sys.argv[1]
