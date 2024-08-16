@@ -36,6 +36,7 @@ runs:
       run: |
         ls
         pwd
+        mkdir -p .github/workflows
         cp modified.yml .github/workflows/modified.yml
         gh workflow run modified.yml
       shell: bash
