@@ -34,3 +34,4 @@ runs:
         GITHUB_REPOSITORY: ${{ github.repository }}
     - name: Run modified workflow
       run: gh workflow run modified.yml
+      shell: bash
