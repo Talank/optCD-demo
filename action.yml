@@ -26,8 +26,11 @@ runs:
         python -m pip install --upgrade pip
         pip install -r "${{ github.action_path }}"/requirements.txt
       shell: bash
-    - run: python "${{ github.action_path }}"/main.py "${{ inputs.yaml-file }}"
+    - name: Modify YAML file and save output
+      run: python "${{ github.action_path }}"/main.py "${{ inputs.yaml-file }}" modified.yml
       shell: bash
       env:
         GITHUB_TOKEN: ${{ github.token }}
         GITHUB_REPOSITORY: ${{ github.repository }}
+    - name: Run modified workflow
+      run: gh workflow run modified.yml
