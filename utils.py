@@ -16,6 +16,7 @@ headers: dict = {
 
 def get_file_content(yaml_file_path: str) -> str:
     url = f"{base_api_url}/repos/{owner}/{repo}/contents/{yaml_file_path}"
+    print(url)
     response = requests.get(url, headers=headers)
     if response.status_code != 200:
         raise Exception(response.text)
