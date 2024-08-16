@@ -88,7 +88,7 @@ def handle_if(modified_file: str, initial_file: list[str], current_line: int) ->
 def handle_on(modified_file: str, initial_file: list[str], current_line: int) -> (str, int):
     on_indent = get_indent(initial_file[current_line])
     # modified_file += " " * on_indent + "on: [push]\n"  # we only need on: [push]
-    modified_file += " " * on_indent + "on: [workflow_dispatch]\n"
+    modified_file += " " * on_indent + "on: \n" + " " * on_indent *2 + "workflow_dispatch:\n"
     current_line += 1
     while current_line < len(initial_file) and on_indent < get_indent(initial_file[current_line]):  # while in "on"
         current_line += 1
