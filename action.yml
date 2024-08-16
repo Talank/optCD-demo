@@ -33,7 +33,10 @@ runs:
         GITHUB_TOKEN: ${{ github.token }}
         GITHUB_REPOSITORY: ${{ github.repository }}
     - name: Run modified workflow
-      run: gh workflow run modified.yml
+      run: |
+        ls
+        pwd
+        gh workflow run modified.yml
       shell: bash
       env:
         GITHUB_TOKEN: ${{ github.token }}
